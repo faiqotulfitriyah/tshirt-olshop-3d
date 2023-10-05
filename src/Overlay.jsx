@@ -4,9 +4,14 @@ import { AiFillCamera, AiOutlineArrowLeft, AiOutlineHighlight, AiOutlineShopping
 import { useSnapshot } from 'valtio'
 import { state } from './store'
 
+// represent a user interface (UI) overlay
 export function Overlay() {
   const snap = useSnapshot(state)
+
+  // settings for animations
   const transition = { type: 'spring', duration: 0.8 }
+
+  // configuration for animations
   const config = {
     initial: { x: -100, opacity: 0, transition: { ...transition, delay: 0.5 } },
     animate: { x: 0, opacity: 1, transition: { ...transition, delay: 0 } },
@@ -69,6 +74,7 @@ export function Overlay() {
   )
 }
 
+// handle color and decal selection, as well as image download and navigation
 function Customizer() {
   const snap = useSnapshot(state)
   return (
